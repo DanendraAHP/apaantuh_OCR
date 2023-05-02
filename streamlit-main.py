@@ -12,6 +12,7 @@ def load_model():
     text_detection_model = TextDetectionModel()
     ocr_model = OCRModel(text_detection_model)
     return text_detection_model, ocr_model
+@st.experimental_singleton
 def load_tts_engine():
     return pyttsx3.init()
 text_detection_model, ocr_model = load_model()
@@ -36,9 +37,9 @@ if img_file_buffer is not None:
     else:
         text = text[0]
     start = time.time()
-    engine.save_to_file(text, 'audio.mp3')
+    engine.save_to_file(text, 'audio/audio.mp3')
     engine.runAndWait()
-    audio_file = open('audio.mp3', 'rb')
+    audio_file = open('audio/audio.mp3', 'rb')
     audio_bytes = audio_file.read()
     end = time.time()
     print(f'[INFO] from TTS took {end-start} seconds')
