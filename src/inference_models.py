@@ -1,7 +1,7 @@
 from imutils.object_detection import non_max_suppression
 import numpy as np
 import cv2
-from config import TEXT_DETECTION_CONFIG, OCR_CONFIG
+from src.config import TEXT_DETECTION_CONFIG, OCR_CONFIG
 import time
 import pytesseract
 from src.utils import crop_img, post_process_text
