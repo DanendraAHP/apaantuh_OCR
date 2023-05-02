@@ -8,7 +8,7 @@ import os
 from werkzeug.utils import secure_filename
 from src.utils import decode_img
 from src.inference_models import OCRModel, TextDetectionModel
-from config import OCR_CONFIG
+from src.config import OCR_CONFIG
 
 PATH = os.getcwd()
 IMAGE_LOCATION = os.path.join(PATH,"images")
