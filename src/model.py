@@ -1,5 +1,5 @@
 import tensorflow as tf
-from src.config import MODEL_CONFIG, DATASET_CONFIG
+from training_config import MODEL_CONFIG, DATASET_CONFIG
 import matplotlib.pyplot as plt
 import time
 

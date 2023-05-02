@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 from sklearn.model_selection import KFold
 from sklearn.model_selection import train_test_split
-from src.config import DATASET_CONFIG
+from training_config import DATASET_CONFIG
 import time
 #load mnist dataset
 def load_mnist_dataset():
