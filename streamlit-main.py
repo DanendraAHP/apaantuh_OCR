@@ -24,11 +24,17 @@ if img_file_buffer is not None:
     # To convert PIL Image to numpy array:
     img = np.array(img)
     #get text
+    text = []
     if OCR_CONFIG['model_type']=='CRNN':
-        text = ocr_model.ocr_with_crnn(img)
+        text.append(ocr_model.ocr_with_crnn(img))
     else:
-        text = ocr_model.ocr_with_tesseract(img)
+        text.append(ocr_model.ocr_with_tesseract(img))
     #tts
+    print(text)
+    if not text:
+        text = ""
+    else:
+        text = text[0]
     start = time.time()
     engine.save_to_file(text, 'audio.mp3')
     engine.runAndWait()
