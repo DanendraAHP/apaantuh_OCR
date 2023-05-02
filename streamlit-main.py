@@ -38,9 +38,9 @@ if img_file_buffer is not None:
         text = text[0]
     start = time.time()
     engine = pyttsx3.init()
-    engine.save_to_file(text, 'audio.mp3')
+    engine.save_to_file(text, 'audio.wav')
     engine.runAndWait()
-    audio_file = open('audio.mp3', 'rb')
+    audio_file = open('audio.wav', 'rb')
     audio_bytes = audio_file.read()
     end = time.time()
     print(f'[INFO] from TTS took {end-start} seconds')
