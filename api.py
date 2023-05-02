@@ -13,7 +13,7 @@ from src.config import OCR_CONFIG
 PATH = os.getcwd()
 IMAGE_LOCATION = os.path.join(PATH,"images")
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-app = Flask(__name__, static_url_path='/')
+app = Flask(__name__)
 
 
 def allowed_file(filename):
@@ -61,5 +61,5 @@ if __name__ == "__main__":
     #init model
     text_detection_model = TextDetectionModel()
     ocr_model = OCRModel(text_detection_model)
-    app.run()
+    app.run(threaded=True, port=5000)
     #app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 443))
