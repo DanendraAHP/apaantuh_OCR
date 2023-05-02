@@ -61,4 +61,5 @@ if __name__ == "__main__":
     #init model
     text_detection_model = TextDetectionModel()
     ocr_model = OCRModel(text_detection_model)
-    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 443))
+    app.run()
+    #app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 443))
