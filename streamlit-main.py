@@ -16,7 +16,7 @@ def load_model():
 def load_tts_engine():
     return pyttsx3.init()
 text_detection_model, ocr_model = load_model()
-engine = load_tts_engine()
+#engine = load_tts_engine()
 #take image
 img_file_buffer = st.camera_input("Take a picture")
 if img_file_buffer is not None:
@@ -37,6 +37,7 @@ if img_file_buffer is not None:
     else:
         text = text[0]
     start = time.time()
+    engine = pyttsx3.init()
     engine.save_to_file(text, 'audio/audio.mp3')
     engine.runAndWait()
     audio_file = open('audio/audio.mp3', 'rb')
